@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && Input.GetButton("Fire2"))
+        if (Input.GetButton("Fire1") )
         {
 
             anim.SetBool("isAttacking", false);
@@ -60,7 +60,22 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isAttacking", true);
             isAttacking = true;
         }
-            float horizontalInput = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetButton("Fire2")&& Input.GetButton("Jump"))
+        {
+
+            anim.SetBool("isAttacking", false);
+            anim.SetBool("JumpAttack", false);
+            isAttacking = false;
+        }
+        else
+        {
+            anim.SetBool("isAttacking", true);
+            anim.SetBool("JumpAttack", true);
+            isAttacking = true;
+        }
+
+        float horizontalInput = Input.GetAxisRaw("Horizontal");
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, isGroundLayer);
 
         if (Input.GetButtonDown("Jump"))
