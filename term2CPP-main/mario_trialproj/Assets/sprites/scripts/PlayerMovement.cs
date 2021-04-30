@@ -53,13 +53,9 @@ public class PlayerMovement : MonoBehaviour
         {
 
             anim.SetBool("isAttacking", false);
-            isAttacking = false;
+            
         }
-        else 
-        {
-            anim.SetBool("isAttacking", true);
-            isAttacking = true;
-        }
+      
 
         if (Input.GetButton("Fire2")&& Input.GetButton("Jump"))
         {

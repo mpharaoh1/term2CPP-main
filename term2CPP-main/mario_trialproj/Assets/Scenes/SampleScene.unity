@@ -945,7 +945,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 400
   isGrounded: 1
-  isAttacking: 1
+  isAttacking: 0
   isGroundLayer:
     serializedVersion: 2
     m_Bits: 8
